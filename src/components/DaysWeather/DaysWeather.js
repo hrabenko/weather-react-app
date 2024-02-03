@@ -1,6 +1,5 @@
 import './DaysWeather.sass';
 import DayWeatherCard from "../DayWeatherCard/DayWeatherCard";
-import config from "../../config";
 import {useEffect, useState} from "react";
 import {getGeneralData} from "../../utils";
 import DetailedDayForecast from "../DetailedDayForecast/DetailedDayForecast";
@@ -16,7 +15,13 @@ export default function DaysWeather({location}) {
 
     const getData = async () => {
         try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${config.apiToken}&units=metric`);
+            const apiToken = process.env.REACT_APP_API_TOKEN;
+            console.log("API Token:", apiToken);  // Log the API token
+
+            const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiToken}&units=metric`;
+            console.log("API URL:", apiUrl);  // Log the complete URL
+
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${process.env.REACT_APP_API_TOKEN}&units=metric`);
             if (response.ok) {
                 const data = await response.json();
                 setWeatherData(getGeneralData(data));

@@ -1,6 +1,5 @@
 import './CurrentWeatherCard.sass';
 import {useEffect, useState} from "react";
-import config from '../../config';
 
 
 function CurrentWeatherCard({location, setFullLocation}) {
@@ -12,7 +11,8 @@ function CurrentWeatherCard({location, setFullLocation}) {
 
     const getData = async () => {
         try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${config.apiToken}&units=metric`);
+
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_TOKEN}&units=metric`);
             if (response.ok) {
                 const data = await response.json();
                 console.log(data)
