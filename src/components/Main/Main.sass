@@ -1,0 +1,18 @@
+
+.forecast
+  display: grid
+  grid-template-columns: 300px 600px
+  grid-gap: 50px
+
+@media (max-width: 1024px)
+  .forecast
+    grid-template-columns: 200px 500px
+    grid-gap: 30px
+
+
+@media (max-width: 768px)
+  .forecast
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center

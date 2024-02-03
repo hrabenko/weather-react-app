@@ -1,0 +1,44 @@
+@import '../../_variables'
+
+.searchbar
+  background-color: rgba(255, 255, 255, 0.25)
+  border-radius: 25px
+  padding: 0 0 0 10px
+  display: flex
+  flex-direction: row
+  align-items: center
+  height: 50px
+
+  .location-icon
+    height: 30px
+    width: 23px
+    fill: $text-color
+
+  .location-input
+    border: none
+    color: $text-color
+    background: none
+    width: 100%
+    margin-left: 10px
+    height: 100%
+    font-size: 20px
+
+
+    &:focus-visible
+      outline: none
+
+    &::placeholder
+      color: rgba(255, 255, 255, 0.5)
+
+  .search-button
+    border: none
+    background: $secondary-color
+    color: $text-color
+    height: 100%
+    border-bottom-right-radius: 25px
+    border-top-right-radius: 25px
+    width: 100px
+    font-family: $font-family
+
+    &:hover
+      background-color: $primary-color

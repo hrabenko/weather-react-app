@@ -1,0 +1,50 @@
+@import "../../variables"
+
+.detailed-forecast
+  display: flex
+  justify-content: center
+  align-items: flex-end
+  color: $text-color
+  background-color: $secondary-color
+  border-radius: 15px
+  margin-top: 20px
+  font-size: 12px
+  padding: 20px
+
+
+  .weather-icon
+    width: 100px
+
+  .table
+    border-right: 1px solid $text-color
+
+    & th
+      font-weight: normal
+      text-align: right
+      padding: 5px 5px 5px 0
+      white-space: nowrap
+
+
+    & td
+      padding: 5px
+      text-align: center
+
+@media (max-width: 1024px)
+  .detailed-forecast
+    font-size: 8px
+
+    .weather-icon
+      width: 80px
+
+@media (max-width: 768px)
+  .detailed-forecast
+    .table
+      & td
+        padding: 5px 0
+
+
+@media (max-width: 480px)
+  .detailed-forecast
+    padding: 20px 0
+    .weather-icon
+      display: none

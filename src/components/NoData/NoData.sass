@@ -1,0 +1,26 @@
+@import "../../variables"
+
+.no-data-container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  color: $text-color
+  font-size: 30px
+  text-align: center
+
+  .no-data-title
+    font-weight: normal
+    margin: 40px 0 20px 0
+
+  .no-data-image
+    max-height: 400px
+
+
+@media (max-width: 768px)
+  .no-data-container
+    font-size: 20px
+
+    .no-data-image
+      width: 100%
+      object-fit: contain

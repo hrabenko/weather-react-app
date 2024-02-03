@@ -1,0 +1,44 @@
+@import '../../_variables'
+@import "../../_mixins"
+
+.current-weather
+  @include box-shadow($primary-color)
+  border-radius: 15px
+  background: $primary-color
+  width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 0 20px
+
+  .weather-icon
+    width: 150px
+    margin-top: 40px
+
+  .weather-data-list
+    list-style: none
+    color: $text-color
+    font-size: 20px
+    padding: 0
+    width: 100%
+    box-sizing: border-box
+
+    & .list-item
+      margin: 20px 0
+      display: flex
+      justify-content: space-between
+
+
+@media (max-width: 1024px)
+  .current-weather
+
+    .weather-icon
+      width: 100px
+
+    .weather-data-list
+      font-size: 16px
+
+@media (max-width: 768px)
+  .current-weather
+    width: 300px

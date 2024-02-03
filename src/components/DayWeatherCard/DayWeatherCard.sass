@@ -1,0 +1,65 @@
+@import '../../_variables'
+@import "../../_mixins"
+
+.day-card
+  background-color: $primary-color
+  color: $text-color
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  padding: 10px
+  border-radius: 15px
+
+
+  &-active
+    @include box-shadow($accent-color)
+    background-color: $accent-color
+
+
+  .data
+    font-weight: normal
+    font-size: 14px
+
+  .weather-icon
+    width: 50px
+    margin: 15px 0
+
+  .minmax-temperature
+    display: flex
+    gap: 20px
+
+    .temp-description
+      font-size: 8px
+      margin: 0 0 5px 0
+
+
+    .temp
+      font-size: 16px
+      margin: 0
+
+
+@media (max-width: 1024px)
+  .day-card
+
+    .data
+      font-size: 12px
+
+    .weather-icon
+      width: 30px
+
+    .minmax-temperature
+      .temp-description
+        font-size: 6px
+        margin: 0
+
+      .temp
+        font-size: 12px
+
+
+@media (max-width: 768px)
+  .day-card
+    width: 80px
+
+@media (max-width: 480px)

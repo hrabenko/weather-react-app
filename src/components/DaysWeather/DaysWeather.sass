@@ -1,0 +1,22 @@
+@import '../../_variables'
+@import "../../_mixins"
+
+.weather-cards-container
+  display: flex
+  justify-content: center
+  width: 100%
+  gap: 20px
+
+@media (max-width: 1024px)
+  .weather-cards-container
+    gap: 10px
+
+@media (max-width: 768px)
+  .weather-cards-container
+    padding: 10px 5px
+
+
+@media (max-width: 480px)
+  .weather-cards-container
+    flex-wrap: wrap
+
