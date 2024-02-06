@@ -2,9 +2,8 @@ import locationIcon from '../../img/location.svg';
 import './SearchBar.sass';
 import {useState} from "react";
 
-function SearchBar({setLocation}) {
-    const [searchBarText, setSearchBar] = useState('');
-
+function SearchBar({searchBarText, setSearchBar, setLocation}) {
+    // const [searchBarText, setSearchBar] = useState('');
 
     return (
         <div className="searchbar">

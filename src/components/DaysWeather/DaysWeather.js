@@ -16,16 +16,13 @@ export default function DaysWeather({location}) {
     const getData = async () => {
         try {
             const apiToken = process.env.REACT_APP_API_TOKEN;
-            console.log("API Token:", apiToken);  // Log the API token
 
             const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiToken}&units=metric`;
-            console.log("API URL:", apiUrl);  // Log the complete URL
 
             const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${process.env.REACT_APP_API_TOKEN}&units=metric`);
             if (response.ok) {
                 const data = await response.json();
                 setWeatherData(getGeneralData(data));
-                console.log(getGeneralData(data))
             } else {
                 console.error(`HTTP error! Status: ${response.status}`);
             }

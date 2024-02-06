@@ -15,7 +15,6 @@ function CurrentWeatherCard({location, setFullLocation}) {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_TOKEN}&units=metric`);
             if (response.ok) {
                 const data = await response.json();
-                console.log(data)
                 setWeatherData(data);
                 const fullLocation = `${data.name}, ${data.sys.country}`;
                 setFullLocation(fullLocation);
